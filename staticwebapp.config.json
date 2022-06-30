@@ -13,7 +13,7 @@
   }
   "routes": [
     {
-      "route": "/profile/index.html",
+      "route": "/*",
       "allowedRoles": ["authenticated"]
     }
   ]
