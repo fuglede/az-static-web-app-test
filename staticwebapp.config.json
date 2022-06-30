@@ -11,4 +11,10 @@
       }
     }
   }
+  "routes": [
+    {
+      "route": "/profile/index.html",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
 }
