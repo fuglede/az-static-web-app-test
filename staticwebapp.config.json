@@ -11,10 +11,36 @@
       }
     }
   }
-  "routes": [
-    {
-      "route": "/*",
-      "allowedRoles": ["authenticated"]
-    }
-  ]
+    "routes": [
+      {
+        "route": "/login",
+        "serve": "/.auth/login/aad",
+        "allowedRoles": ["anonymous"]
+      },
+      {
+        "route": "/.auth/login/aad",
+        "allowedRoles": ["anonymous"]
+      },
+      {
+        "route": "/logout",
+        "serve": "/.auth/logout"
+      },
+      {
+        "route": "/*",
+        "allowedRoles": ["authenticated"]
+      }
+    ],
+    "platformErrorOverrides": [
+        {
+          "errorType": "NotFound",
+          "serve": "/404.html"
+        },
+        {
+          "errorType": "Unauthenticated",
+          "statusCode": "302",
+          "serve": "/login"
+        }
+      ]
+  }
+
 }
