@@ -31,14 +31,9 @@
     }
   ],
   "platformErrorOverrides": [
-    {
-      "errorType": "NotFound",
-      "serve": "/404.html"
-    },
-    {
-      "errorType": "Unauthenticated",
-      "statusCode": "302",
-      "serve": "/login"
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
     }
   ]
 }
