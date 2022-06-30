@@ -14,7 +14,7 @@
   "routes": [
     {
       "route": "/login",
-      "serve": "/.auth/login/aad",
+      "rewrite": "/.auth/login/aad",
       "allowedRoles": ["anonymous"]
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "route": "/logout",
-      "serve": "/.auth/logout"
+      "rewrite": "/.auth/logout"
     },
     {
       "route": "/*",
